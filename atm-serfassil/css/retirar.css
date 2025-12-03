@@ -1,0 +1,127 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a; /* Fondo oscuro */
+    color: #ffffff; /* Texto blanco */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Contenedor principal */
+.container {
+    background-color: #2c3e50; /* Fondo azul oscuro */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Título */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/* Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Select y opciones */
+select {
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+    padding: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s, background-color 0.3s;
+}
+select:hover, select:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+}
+option {
+    background-color: #fff;
+    color: #000;
+}
+option:hover {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+/* Contenedor de botones de monto */
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+    gap: 10px; /* Espacio entre botones */
+    margin-bottom: 20px;
+}
+
+/* Botones de monto */
+.button-grid button {
+    padding: 15px 20px;
+    background-color: #3498db; /* Azul brillante */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-grid button:hover {
+    background-color: #2980b9; /* Azul más oscuro al pasar el mouse */
+}
+
+/* Botón de cancelar */
+form button[value="cancel"] {
+    background-color: #e74c3c; /* Rojo */
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+form button[value="cancel"]:hover {
+    background-color: #c0392b; /* Rojo más oscuro al pasar el mouse */
+}
+
+/* Botón de otro monto */
+form button[value="other"] {
+    background-color: #2ecc71; /* Verde */
+    width: 100%;
+}
+
+form button[value="other"]:hover {
+    background-color: #27ae60; /* Verde más oscuro al pasar el mouse */
+}
+
+/* Mensaje de selección */
+form p {
+    font-size: 16px;
+    color: #bdc3c7;
+    margin-bottom: 20px;
+}
+
+/* Pie de página */
+.footer {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #bdc3c7;
+}
+
+.footer a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}

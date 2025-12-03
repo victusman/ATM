@@ -1,0 +1,45 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a; /* Fondo oscuro */
+    color: #ffffff; /* Texto blanco */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Contenedor principal */
+.proceso-container {
+    text-align: center;
+}
+
+/* Animación de carga */
+.loader {
+    border: 8px solid #3498db; /* Azul brillante */
+    border-top: 8px solid transparent; /* Transparente en la parte superior */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite; /* Animación de rotación */
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Título */
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+/* Mensaje */
+p {
+    font-size: 16px;
+    color: #bdc3c7;
+}

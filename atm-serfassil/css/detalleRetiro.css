@@ -1,0 +1,97 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a; /* Fondo oscuro */
+    color: #ffffff; /* Texto blanco */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    background-color: #2c3e50; /* Fondo azul oscuro */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 800px; /* Ancho máximo para dos columnas */
+    gap: 30px; /* Espacio entre las columnas */
+}
+
+/* Columna izquierda: Detalles del retiro */
+.left-column {
+    flex: 1;
+    text-align: left;
+}
+
+.left-column h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.left-column h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.left-column h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.left-column p {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #bdc3c7;
+}
+
+.left-column strong {
+    color: #ffffff;
+}
+
+/* Columna derecha: Preguntas y respuestas */
+.right-column {
+    flex: 1;
+    text-align: left;
+}
+
+.right-column h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.right-column form {
+    margin-bottom: 20px;
+}
+
+.right-column button {
+    padding: 10px 20px;
+    background-color: #3498db; /* Azul brillante */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+}
+
+.right-column button:hover {
+    background-color: #2980b9; /* Azul más oscuro al pasar el mouse */
+}
+
+.right-column button[value="no"] {
+    background-color: #e74c3c; /* Rojo */
+}
+
+.right-column button[value="no"]:hover {
+    background-color: #c0392b; /* Rojo más oscuro al pasar el mouse */
+}

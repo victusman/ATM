@@ -1,0 +1,93 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a; /* Fondo oscuro */
+    color: #ffffff; /* Texto blanco */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Contenedor principal */
+.container {
+    background-color: #2c3e50; /* Fondo azul oscuro */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Título */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/* Saldo actual */
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #bdc3c7;
+}
+
+/* Botón de imprimir */
+.btn {
+    padding: 10px 20px;
+    background-color: #3498db; /* Azul brillante */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.btn:hover {
+    background-color: #2980b9; /* Azul más oscuro al pasar el mouse */
+}
+
+/* Pregunta para otro servicio */
+.fin-retiro {
+    margin-top: 20px;
+}
+
+.fin-retiro h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.fin-retiro form {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espacio entre los botones */
+}
+
+.fin-retiro button {
+    padding: 10px 20px;
+    background-color: #2ecc71; /* Verde */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.fin-retiro button[value="no"] {
+    background-color: #e74c3c; /* Rojo */
+}
+
+.fin-retiro button[value="no"]:hover {
+    background-color: #c0392b; /* Rojo más oscuro al pasar el mouse */
+}
+
+.fin-retiro button[value="si"]:hover {
+    background-color: #27ae60; /* Verde más oscuro al pasar el mouse */
+}
