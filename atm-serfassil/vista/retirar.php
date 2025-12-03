@@ -71,8 +71,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['users'][$currentUser] = $userData;
         }
 
-        // Redirigir a proceso.php para mostrar la pantalla de "Procesando" antes de detalleRetiro.php
-        redirigir('../vista/detalleRetiro.php');
+        // Redirigir al modal de procesamiento antes de detalleRetiro.php
+        header('Location: proceso_modal.php?tipo=retiro&destino=detalleRetiro.php');
+        exit;
     } else {
         // Si ocurre un error en la transacción, mostramos el mensaje de error.
         echo $result['message'];
