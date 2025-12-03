@@ -3,6 +3,13 @@ session_start();
 
 if (!isset($_SESSION['token'])) {
     header('Location: login.php');
+    
+    exit;
+}
+
+// Si se accede sin el parámetro 'procesar', mostrar el modal de procesamiento primero
+if (!isset($_GET['procesar'])) {
+    header('Location: proceso_modal.php?tipo=consulta&destino=consulta.php?procesar=1');
     exit;
 }
 

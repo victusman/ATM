@@ -44,8 +44,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 'tarjeta' => $_SESSION['numbercard'],
                 'nombre' => $_SESSION['user']
             ];
-            // Redirigir a detalleDeposito.php dentro de la carpeta vista
-            header('Location: ../vista/detalleDeposito.php');
+            // Redirigir al modal de procesamiento antes de detalleDeposito.php
+            header('Location: proceso_modal.php?tipo=deposito&destino=detalleDeposito.php');
             exit;
         } else {
             echo $result['message'];
