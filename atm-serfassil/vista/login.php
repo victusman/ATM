@@ -58,8 +58,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html lang="<?php echo $language; ?>">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $translations['welcome']; ?></title>
-    <link rel="stylesheet" href="../css/login.css"> <!-- Vincula el archivo CSS -->
+    <link rel="stylesheet" href="../css/login.css">
 </head>
 
 <body>
@@ -82,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <!-- Mostrar mensaje de error si existe -->
             <?php if (isset($error_message)): ?>
-                <div style="color: red; margin-bottom: 15px; text-align: center;">
+                <div class="error-message">
                     <?php echo $error_message; ?>
                 </div>
             <?php endif; ?>
