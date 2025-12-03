@@ -27,8 +27,10 @@ if (!isset($_SESSION['current_user']) && isset($_SESSION['numbercard'])) {
 <html lang="<?php echo $language; ?>">
 
 <head>
-    <title>Menú Principal</title> <!-- Este título no cambia con el idioma -->
-    <link rel="stylesheet" href="../css/menu.css"> <!-- Vincula el archivo CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Principal</title>
+    <link rel="stylesheet" href="../css/menu.css">
 </head>
 
 <body>

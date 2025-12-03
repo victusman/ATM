@@ -1,93 +1,333 @@
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Estilos generales */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #1a1a1a; /* Fondo oscuro */
-    color: #ffffff; /* Texto blanco */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #050505 100%);
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    padding: 20px;
+    color: #ffffff;
 }
 
 /* Contenedor principal */
 .container {
-    background-color: #2c3e50; /* Fondo azul oscuro */
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     text-align: center;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.container:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
 }
 
 /* Título */
 h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
     color: #ffffff;
+    font-weight: 300;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.3;
 }
 
 /* Saldo actual */
 p {
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: #bdc3c7;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #fefefe;
+    font-weight: 600;
+    background: rgba(100, 181, 246, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid rgba(100, 181, 246, 0.3);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Botón de imprimir */
 .btn {
-    padding: 10px 20px;
-    background-color: #3498db; /* Azul brillante */
+    width: 100%;
+    padding: 18px 25px;
+    background: linear-gradient(45deg, #42a5f5, #1e88e5);
     color: #ffffff;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
 }
 
 .btn:hover {
-    background-color: #2980b9; /* Azul más oscuro al pasar el mouse */
+    background: linear-gradient(45deg, #1e88e5, #1565c0);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(30, 136, 229, 0.4);
 }
 
-/* Pregunta para otro servicio */
+.btn:active {
+    transform: translateY(-1px);
+}
+
+/* Sección de pregunta */
 .fin-retiro {
-    margin-top: 20px;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .fin-retiro h2 {
-    font-size: 20px;
-    margin-bottom: 15px;
+    font-size: 1.3rem;
+    margin-bottom: 25px;
     color: #ffffff;
+    font-weight: 400;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .fin-retiro form {
     display: flex;
     justify-content: center;
-    gap: 15px; /* Espacio entre los botones */
+    gap: 20px;
 }
 
 .fin-retiro button {
-    padding: 10px 20px;
-    background-color: #2ecc71; /* Verde */
-    color: #ffffff;
+    flex: 1;
+    max-width: 120px;
+    padding: 15px 20px;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
 }
 
-.fin-retiro button[value="no"] {
-    background-color: #e74c3c; /* Rojo */
+.fin-retiro button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
 }
 
-.fin-retiro button[value="no"]:hover {
-    background-color: #c0392b; /* Rojo más oscuro al pasar el mouse */
+.fin-retiro button:hover::before {
+    left: 100%;
+}
+
+/* Botón SI */
+.fin-retiro button[value="si"] {
+    background: linear-gradient(45deg, #66bb6a, #4caf50);
+    color: #ffffff;
 }
 
 .fin-retiro button[value="si"]:hover {
-    background-color: #27ae60; /* Verde más oscuro al pasar el mouse */
+    background: linear-gradient(45deg, #4caf50, #388e3c);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+}
+
+/* Botón NO */
+.fin-retiro button[value="no"] {
+    background: linear-gradient(45deg, #ef5350, #f44336);
+    color: #ffffff;
+}
+
+.fin-retiro button[value="no"]:hover {
+    background: linear-gradient(45deg, #f44336, #d32f2f);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(244, 67, 54, 0.4);
+}
+
+.fin-retiro button:active {
+    transform: translateY(-1px);
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
+    .container {
+        padding: 30px 25px;
+        max-width: 100%;
+    }
+    
+    h1 {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+    }
+    
+    p {
+        font-size: 1.3rem;
+        margin-bottom: 25px;
+        padding: 18px;
+    }
+    
+    .btn {
+        padding: 15px 20px;
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+    
+    .fin-retiro h2 {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+    
+    .fin-retiro button {
+        padding: 12px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 25px 20px;
+        border-radius: 15px;
+    }
+    
+    h1 {
+        font-size: 1.4rem;
+        margin-bottom: 18px;
+    }
+    
+    p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        padding: 15px;
+    }
+    
+    .btn {
+        padding: 12px 18px;
+        font-size: 0.95rem;
+        border-radius: 10px;
+    }
+    
+    .fin-retiro {
+        margin-top: 25px;
+        padding-top: 25px;
+    }
+    
+    .fin-retiro form {
+        gap: 15px;
+    }
+    
+    .fin-retiro button {
+        padding: 10px 14px;
+        font-size: 0.85rem;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 360px) {
+    .container {
+        padding: 20px 15px;
+    }
+    
+    h1 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+    
+    p {
+        font-size: 1.1rem;
+        padding: 12px;
+    }
+    
+    .fin-retiro form {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .fin-retiro button {
+        max-width: none;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación escalonada para elementos */
+h1 {
+    animation: fadeInUp 0.6s ease-out 0.1s both;
+}
+
+p {
+    animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+.btn {
+    animation: fadeInUp 0.6s ease-out 0.3s both;
+}
+
+.fin-retiro {
+    animation: fadeInUp 0.6s ease-out 0.4s both;
+}
+
+/* Mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Estados de focus para accesibilidad */
+button:focus,
+.btn:focus {
+    outline: 3px solid #64b5f6;
+    outline-offset: 2px;
 }

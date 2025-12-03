@@ -1,127 +1,377 @@
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Estilos generales */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #1a1a1a; /* Fondo oscuro */
-    color: #ffffff; /* Texto blanco */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #050505 100%);
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    padding: 20px;
+    color: #ffffff;
 }
 
 /* Contenedor principal */
 .container {
-    background-color: #2c3e50; /* Fondo azul oscuro */
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     width: 100%;
-    max-width: 600px;
+    max-width: 700px;
     text-align: center;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.container:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
 }
 
 /* Título */
 h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
     color: #ffffff;
+    font-weight: 300;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Formulario */
 form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
 
-/* Select y opciones */
+/* Mensaje de selección */
+form p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+/* Select de cuenta */
 select {
-    background-color: #f0f0f0;
-    border: 2px solid #ccc;
-    padding: 10px;
-    font-size: 16px;
-    transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s, background-color 0.3s;
+    width: 100%;
+    padding: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    transition: all 0.3s ease;
+    outline: none;
+    margin-bottom: 10px;
 }
+
 select:hover, select:focus {
-    border-color: #007BFF;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-    background-color: #e0e0e0;
-    transform: scale(1.05);
+    border-color: #64b5f6;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 3px rgba(100, 181, 246, 0.2);
+    transform: translateY(-2px);
 }
-option {
-    background-color: #fff;
-    color: #000;
-}
-option:hover {
-    background-color: #007BFF;
-    color: #fff;
+
+select option {
+    background-color: #2c3e50;
+    color: #ffffff;
+    padding: 10px;
 }
 
 /* Contenedor de botones de monto */
 .button-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
-    gap: 10px; /* Espacio entre botones */
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
     margin-bottom: 20px;
 }
 
 /* Botones de monto */
 .button-grid button {
-    padding: 15px 20px;
-    background-color: #3498db; /* Azul brillante */
+    padding: 18px 15px;
+    background: linear-gradient(45deg, #42a5f5, #1e88e5);
     color: #ffffff;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.button-grid button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.button-grid button:hover::before {
+    left: 100%;
 }
 
 .button-grid button:hover {
-    background-color: #2980b9; /* Azul más oscuro al pasar el mouse */
+    background: linear-gradient(45deg, #1e88e5, #1565c0);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(30, 136, 229, 0.4);
 }
 
-/* Botón de cancelar */
-form button[value="cancel"] {
-    background-color: #e74c3c; /* Rojo */
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-form button[value="cancel"]:hover {
-    background-color: #c0392b; /* Rojo más oscuro al pasar el mouse */
+.button-grid button:active {
+    transform: translateY(-1px);
 }
 
 /* Botón de otro monto */
 form button[value="other"] {
-    background-color: #2ecc71; /* Verde */
     width: 100%;
+    padding: 18px 25px;
+    background: linear-gradient(45deg, #66bb6a, #4caf50);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+form button[value="other"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+form button[value="other"]:hover::before {
+    left: 100%;
 }
 
 form button[value="other"]:hover {
-    background-color: #27ae60; /* Verde más oscuro al pasar el mouse */
+    background: linear-gradient(45deg, #4caf50, #388e3c);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
 }
 
-/* Mensaje de selección */
-form p {
-    font-size: 16px;
-    color: #bdc3c7;
-    margin-bottom: 20px;
+/* Botón de cancelar */
+form button[value="cancel"] {
+    width: 100%;
+    padding: 18px 25px;
+    background: linear-gradient(45deg, #ef5350, #f44336);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+form button[value="cancel"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+form button[value="cancel"]:hover::before {
+    left: 100%;
+}
+
+form button[value="cancel"]:hover {
+    background: linear-gradient(45deg, #f44336, #d32f2f);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(244, 67, 54, 0.4);
 }
 
 /* Pie de página */
 .footer {
-    margin-top: 30px;
-    font-size: 14px;
-    color: #bdc3c7;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 300;
 }
 
 .footer a {
-    color: #3498db;
+    color: #64b5f6;
     text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 .footer a:hover {
+    color: #ffffff;
     text-decoration: underline;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
+    .container {
+        padding: 30px 25px;
+        max-width: 100%;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+    }
+    
+    .button-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .button-grid button {
+        padding: 15px 12px;
+        font-size: 0.9rem;
+    }
+    
+    form button[value="other"],
+    form button[value="cancel"] {
+        padding: 15px 20px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 25px 20px;
+        border-radius: 15px;
+    }
+    
+    h1 {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+    }
+    
+    .button-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .button-grid button {
+        padding: 12px 10px;
+        font-size: 0.85rem;
+        border-radius: 10px;
+    }
+    
+    select {
+        padding: 12px;
+        font-size: 16px; /* Evita zoom en iOS */
+    }
+    
+    form button[value="other"],
+    form button[value="cancel"] {
+        padding: 12px 18px;
+        font-size: 0.95rem;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 360px) {
+    .container {
+        padding: 20px 15px;
+    }
+    
+    h1 {
+        font-size: 1.4rem;
+    }
+    
+    .button-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+    
+    .button-grid button {
+        padding: 10px 8px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación escalonada para los botones */
+.button-grid button {
+    animation: fadeInUp 0.6s ease-out;
+    animation-fill-mode: both;
+}
+
+.button-grid button:nth-child(1) { animation-delay: 0.1s; }
+.button-grid button:nth-child(2) { animation-delay: 0.15s; }
+.button-grid button:nth-child(3) { animation-delay: 0.2s; }
+.button-grid button:nth-child(4) { animation-delay: 0.25s; }
+.button-grid button:nth-child(5) { animation-delay: 0.3s; }
+.button-grid button:nth-child(6) { animation-delay: 0.35s; }
+.button-grid button:nth-child(7) { animation-delay: 0.4s; }
+
+form button[value="other"] {
+    animation: fadeInUp 0.6s ease-out 0.45s both;
+}
+
+form button[value="cancel"] {
+    animation: fadeInUp 0.6s ease-out 0.5s both;
+}
+
+/* Mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Estados de focus para accesibilidad */
+button:focus,
+select:focus {
+    outline: 3px solid #64b5f6;
+    outline-offset: 2px;
 }

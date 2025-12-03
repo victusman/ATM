@@ -1,93 +1,317 @@
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Estilos generales */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #1a1a1a; /* Fondo oscuro */
-    color: #ffffff; /* Texto blanco */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #050505 100%);
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    padding: 20px;
+    color: #ffffff;
 }
 
 /* Contenedor principal */
 .container {
-    background-color: #2c3e50; /* Fondo azul oscuro */
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     text-align: center;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.container:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
 }
 
 /* Título */
 h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
     color: #ffffff;
+    font-weight: 300;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Formulario */
 form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 25px;
 }
 
 /* Etiquetas */
 label {
-    font-size: 16px;
-    color: #ffffff;
+    font-size: 1.1rem;
+    color: #f8f9fa;
     text-align: left;
+    margin-bottom: 8px;
+    font-weight: 500;
 }
 
-/* Campos de entrada */
+/* Select de cuenta */
+select {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    transition: all 0.3s ease;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+select:hover, select:focus {
+    border-color: #64b5f6;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 3px rgba(100, 181, 246, 0.2);
+    transform: translateY(-2px);
+}
+
+select option {
+    background-color: #2c3e50;
+    color: #ffffff;
+    padding: 10px;
+}
+
+/* Campos de entrada numéricos */
 input[type="number"] {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #34495e;
-    border-radius: 5px;
-    font-size: 16px;
-    background-color: #34495e;
+    padding: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    font-size: 1.1rem;
+    background: rgba(255, 255, 255, 0.1);
     color: #ffffff;
+    transition: all 0.3s ease;
+    outline: none;
+    text-align: center;
+    font-weight: 600;
+}
+
+input[type="number"]:focus {
+    border-color: #64b5f6;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 3px rgba(100, 181, 246, 0.2);
+    transform: translateY(-2px);
 }
 
 input[type="number"]::placeholder {
-    color: #bdc3c7;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 400;
 }
 
-/* Botones */
+/* Contenedor de botones */
 .buttons {
     display: flex;
-    justify-content: space-between;
-    gap: 15px; /* Espacio entre los botones */
+    gap: 20px;
+    margin-top: 10px;
 }
 
+/* Estilos base para botones */
 .btn {
-    padding: 10px 20px;
-    background-color: #3498db; /* Azul brillante */
-    color: #ffffff;
+    flex: 1;
+    padding: 18px 25px;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    flex: 1; /* Hace que los botones ocupen el mismo espacio */
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
 }
 
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+/* Botón depositar */
 .btn.depositar {
-    background-color: #2ecc71; /* Verde */
+    background: linear-gradient(45deg, #66bb6a, #4caf50);
+    color: #ffffff;
 }
 
 .btn.depositar:hover {
-    background-color: #27ae60; /* Verde más oscuro al pasar el mouse */
+    background: linear-gradient(45deg, #4caf50, #388e3c);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
 }
 
+/* Botón cancelar */
 .btn.cancelar {
-    background-color: #e74c3c; /* Rojo */
+    background: linear-gradient(45deg, #ef5350, #f44336);
+    color: #ffffff;
 }
 
 .btn.cancelar:hover {
-    background-color: #c0392b; /* Rojo más oscuro al pasar el mouse */
+    background: linear-gradient(45deg, #f44336, #d32f2f);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(244, 67, 54, 0.4);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
+    .container {
+        padding: 30px 25px;
+        max-width: 100%;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+    }
+    
+    form {
+        gap: 20px;
+    }
+    
+    select,
+    input[type="number"] {
+        padding: 12px;
+        font-size: 16px; /* Evita zoom en iOS */
+    }
+    
+    .btn {
+        padding: 15px 20px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 25px 20px;
+        border-radius: 15px;
+    }
+    
+    h1 {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+    }
+    
+    .buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .btn {
+        padding: 12px 18px;
+        font-size: 0.95rem;
+        border-radius: 10px;
+    }
+    
+    select,
+    input[type="number"] {
+        padding: 10px;
+        border-radius: 8px;
+    }
+}
+
+@media (max-width: 360px) {
+    .container {
+        padding: 20px 15px;
+    }
+    
+    h1 {
+        font-size: 1.4rem;
+    }
+    
+    form {
+        gap: 18px;
+    }
+    
+    .btn {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación escalonada para elementos */
+h1 {
+    animation: fadeInUp 0.6s ease-out 0.1s both;
+}
+
+label:first-of-type {
+    animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+select {
+    animation: fadeInUp 0.6s ease-out 0.25s both;
+}
+
+label:last-of-type {
+    animation: fadeInUp 0.6s ease-out 0.3s both;
+}
+
+input[type="number"] {
+    animation: fadeInUp 0.6s ease-out 0.35s both;
+}
+
+.buttons {
+    animation: fadeInUp 0.6s ease-out 0.4s both;
+}
+
+/* Mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Estados de focus para accesibilidad */
+button:focus,
+input:focus,
+select:focus {
+    outline: 3px solid #64b5f6;
+    outline-offset: 2px;
 }

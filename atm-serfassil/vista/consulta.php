@@ -33,8 +33,9 @@ $accounts = [
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consulta de Saldo</title>
-    <link rel="stylesheet" href="../css/consulta.css"> <!-- Vincula el archivo CSS -->
+    <link rel="stylesheet" href="../css/consulta.css">
 </head>
 
 <body>

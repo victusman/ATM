@@ -37,8 +37,9 @@ unset($_SESSION['detalle_deposito']);
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $translations['deposit_details']; ?></title>
-    <link rel="stylesheet" href="../css/detalleDeposito.css"> <!-- Vincula el archivo CSS -->
+    <link rel="stylesheet" href="../css/detalleDeposito.css">
 </head>
 
 <body>

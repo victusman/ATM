@@ -58,77 +58,10 @@ if ($accountId && isset($_SESSION['users'][$accountId])) {
 <html lang="es">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historial de Transacciones</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #2c3e50;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
-            margin: auto;
-        }
-        .scrollable-section {
-            max-height: 300px;
-            overflow-y: scroll;
-            border: 1px solid #ccc;
-            padding: 10px;
-            background-color: #f9f9f9;
-            margin-bottom: 20px;
-        }
-        h1, h2 {
-            color:rgb(31, 39, 47);
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-        table th, table td {
-            padding: 10px;
-            border: 1px solid #ddd;
-            text-align: center;
-        }
-        table th {
-            background-color:rgb(175, 168, 168);
-        }
-        table td {
-            background-color: #fff;
-        }
-        button {
-            padding: 10px 20px;
-            background-color:rgb(33, 129, 239);
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        button:hover {
-            background-color: #004494;
-        }
-        label {
-            display: block;
-            margin-top: 10px;
-        }
-        select, input[type="date"] {
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            width: 100%;
-            margin-top: 5px;
-        }
-        .no-transactions {
-            color: #888;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/historial.css">
 </head>
 
 <body>
@@ -189,7 +122,7 @@ if ($accountId && isset($_SESSION['users'][$accountId])) {
             <?php endif; ?>
         </div>
 
-        <div>
+        <div class="print-section">
             <h2>Imprimir Historial</h2>
             <form method="post" action="pdfHistorial.php">
                 <input type="hidden" name="accountId" value="<?= htmlspecialchars($accountId) ?>">
@@ -199,9 +132,9 @@ if ($accountId && isset($_SESSION['users'][$accountId])) {
             </form>
         </div>
 
-        <div>
+        <div class="print-section">
             <h2>¿Deseas realizar otro servicio?</h2>
-            <form method="post" action="procesarRespuesta.php">
+            <form method="post" action="procesarRespuesta.php" class="service-buttons">
                 <button type="submit" name="opcion" value="si">SI</button>
                 <button type="submit" name="opcion" value="no">NO</button>
             </form>

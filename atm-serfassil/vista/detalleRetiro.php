@@ -34,8 +34,9 @@ $horaActual = date("H:i:s");
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $translations['withdrawal_detail']; ?></title>
-    <link rel="stylesheet" href="../css/detalleRetiro.css"> <!-- Vincula el archivo CSS -->
+    <link rel="stylesheet" href="../css/detalleRetiro.css">
 </head>
 
 <body>
@@ -62,11 +63,12 @@ $horaActual = date("H:i:s");
                 ?>
             </p>
 
-            <p><?php echo $translations['save_planet']; ?></p>
+           
         </div>
 
         <!-- Columna derecha: Preguntas y respuestas -->
         <div class="right-column">
+            <p><?php echo $translations['save_planet']; ?></p>
             <h2><?php echo $translations['print_receipt']; ?></h2>
             <form method="post" action="pdfRetiro.php">
                 <button type="submit" name="respuesta" value="si"><?php echo $translations['yes']; ?></button>

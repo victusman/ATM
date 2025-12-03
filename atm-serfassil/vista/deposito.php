@@ -66,8 +66,9 @@ $accounts = [
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $translations['deposit_money']; ?></title>
-    <link rel="stylesheet" href="../css/deposito.css"> <!-- Vincula el archivo CSS -->
+    <link rel="stylesheet" href="../css/deposito.css">
     <script>
         function validarMonto() {
             const monto = document.getElementById('amount').value;
